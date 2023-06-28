@@ -1,8 +1,8 @@
-describe('can login into application', () => {
+describe('Login into application', () => {
     beforeEach(() => {
         cy.task('db:seed');
         cy.visit('/signin');
-    })
+    });
 
     const username = 'Katharina_Bernier';
     const password = 's3cret';
@@ -17,6 +17,7 @@ describe('can login into application', () => {
             const statusCode = res.response?.statusCode;
             expect(statusCode).equal(200);
         });
+        cy.get('[data-test="main"]').should('be.visible');
     });
 
     it('cannot login with invalid credentials - fail', () => {
