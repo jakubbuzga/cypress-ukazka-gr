@@ -82,7 +82,7 @@ const TransactionCreateStepThree: React.FC<TransactionCreateStepThreeProps> = ({
         style={{ paddingBottom: "5%" }}
       >
         <Grid container direction="row" justify="center" alignItems="center">
-          <Grid item>
+          <Grid item data-test="confirmation-text">
             <Typography component="h2" variant="h6" color="primary" gutterBottom>
               {transactionDetails?.transactionType === "payment" ? "Paid " : "Requested "}
               {transactionDetails?.amount &&
